@@ -1,0 +1,1440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FFTWindowWgtClass</class>
+ <widget class="QWidget" name="FFTWindowWgtClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1298</width>
+    <height>983</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FFTWindowWgt</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget_Main">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_WndSpecAns">
+      <attribute name="title">
+       <string>窗函数分析</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QTabWidget" name="tabWidget_2">
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <widget class="QWidget" name="tab_GenWndPt">
+            <attribute name="title">
+             <string>窗函数</string>
+            </attribute>
+            <layout class="QHBoxLayout" name="horizontalLayout_22">
+             <item>
+              <widget class="QGroupBox" name="groupBox_baseSig_chart">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>800</width>
+                 <height>250</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>1980</width>
+                 <height>440</height>
+                </size>
+               </property>
+               <property name="title">
+                <string>窗函数绘制</string>
+               </property>
+               <layout class="QHBoxLayout" name="HLayout_FFTWnd_TimeCht"/>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox_5">
+               <property name="minimumSize">
+                <size>
+                 <width>240</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>240</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="title">
+                <string>时域窗型控制</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout">
+                  <item>
+                   <widget class="QLabel" name="label">
+                    <property name="text">
+                     <string>窗型</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboBox_WndType">
+                    <property name="currentIndex">
+                     <number>1</number>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>矩形</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Hann</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="groupBox_9">
+                  <property name="title">
+                   <string>长度定义</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_8">
+                   <item>
+                    <widget class="QRadioButton" name="radioBtn_WndLengthType_Point">
+                     <property name="text">
+                      <string>点数</string>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioBtn_WndLengthType_Time">
+                     <property name="text">
+                      <string>时长</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_9">
+                  <item>
+                   <widget class="QLabel" name="label_WndLengthPoint">
+                    <property name="text">
+                     <string>窗型点数：</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="SBox_WndLengthPointCount">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="maximum">
+                     <number>100000</number>
+                    </property>
+                    <property name="value">
+                     <number>4096</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_10">
+                  <item>
+                   <widget class="QLabel" name="label_WndLength_Time">
+                    <property name="text">
+                     <string>窗型时长(ms)：</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="DSBox_WndLength_TimeMSec">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="maximum">
+                     <double>100000.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>100.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_12">
+                  <item>
+                   <widget class="QLabel" name="label_WndSampleRate">
+                    <property name="text">
+                     <string>采样率</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="SBox_WndSampleRate">
+                    <property name="maximum">
+                     <number>100000</number>
+                    </property>
+                    <property name="value">
+                     <number>44100</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_resultWndLength_Point">
+                  <property name="text">
+                   <string>窗型等价点数：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_resultWndLength_Time">
+                  <property name="text">
+                   <string>窗型等价时长：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_WndSTFTFreqDelta">
+                  <property name="text">
+                   <string>FFT输出频率间隔：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_GenState">
+                  <property name="text">
+                   <string>生成状态：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QProgressBar" name="progressBar_dataLoadState">
+                  <property name="value">
+                   <number>24</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_GenWndTimeGraph">
+                  <property name="text">
+                   <string>生成窗型</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="tab_3">
+            <attribute name="title">
+             <string>激发调制函数</string>
+            </attribute>
+            <layout class="QHBoxLayout" name="horizontalLayout_23">
+             <item>
+              <widget class="QGroupBox" name="groupBox_ActiveSig_chart">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>800</width>
+                 <height>250</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>1980</width>
+                 <height>440</height>
+                </size>
+               </property>
+               <property name="title">
+                <string>冲击调制函数绘制</string>
+               </property>
+               <layout class="QHBoxLayout" name="HLayout_FFTWnd_ActiveFunc_Cht"/>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox_8">
+               <property name="maximumSize">
+                <size>
+                 <width>240</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="title">
+                <string>冲击调制函数</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item>
+                 <widget class="QGroupBox" name="groupBox_11">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>408</height>
+                   </size>
+                  </property>
+                  <property name="title">
+                   <string>窗函数参数</string>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_10">
+                   <item>
+                    <widget class="QLabel" name="label_ActiveWnd_sampleRate">
+                     <property name="text">
+                      <string>采样率</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_ActiveWnd_WndType">
+                     <property name="text">
+                      <string>窗函数类型</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_ActiveWnd_FFTWndPtCount">
+                     <property name="text">
+                      <string>窗函数点数</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="groupBox_ActiveStartType">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>48</height>
+                   </size>
+                  </property>
+                  <property name="title">
+                   <string>冲击开始时间类型</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_24">
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_ActiveStartType_Time">
+                     <property name="text">
+                      <string>时间</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_ActiveStartType_Ratio">
+                     <property name="text">
+                      <string>窗口比例</string>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_20">
+                  <item>
+                   <widget class="QLabel" name="label_ActiveStartTime">
+                    <property name="text">
+                     <string>开始时间（ms）</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="DSBox_ActiveStartTime">
+                    <property name="minimum">
+                     <double>-50.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>50.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_25">
+                  <item>
+                   <widget class="QLabel" name="label_ActiveStartRatio">
+                    <property name="text">
+                     <string>开始位置比例（%）</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="DSBox_ActiveStartRatio">
+                    <property name="minimum">
+                     <double>0.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>100.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>34.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_21">
+                  <item>
+                   <widget class="QLabel" name="label_IncreaseTime">
+                    <property name="text">
+                     <string>上升时间（ms）</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="DSBox_IncreaseTime">
+                    <property name="maximum">
+                     <double>50.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>15.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QProgressBar" name="progressBar_ActiveFuncLoadState">
+                  <property name="value">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_GenActiveFunc">
+                  <property name="text">
+                   <string>生成调制函数</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="groupBox_ActiveWnd_ShowType">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="title">
+                   <string>显示对象</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_34">
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_ActiveWnd_ShowType_STFTWnd">
+                     <property name="text">
+                      <string>STFT窗</string>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_ActiveWnd_ShowType_ActiveVal">
+                     <property name="text">
+                      <string>激发函数</string>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_ActiveWnd_ShowType_ActiveWnd">
+                     <property name="text">
+                      <string>激发窗</string>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="currentIndex">
+          <number>3</number>
+         </property>
+         <widget class="QWidget" name="tab_spectrum">
+          <attribute name="title">
+           <string>STFT窗频谱</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QGroupBox" name="groupBox">
+             <property name="minimumSize">
+              <size>
+               <width>1024</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>窗形频谱</string>
+             </property>
+             <layout class="QVBoxLayout" name="VLayout_FFTWndSpectrum_Cht"/>
+            </widget>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QGroupBox" name="groupBox_4">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>80</height>
+                </size>
+               </property>
+               <property name="title">
+                <string>分析控制</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <widget class="QGroupBox" name="groupBox_3">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="title">
+                   <string>值显示方式</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_4">
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_WndFFTValType_AbsoluteVal">
+                     <property name="text">
+                      <string>绝对值</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_WndFFTValType_db">
+                     <property name="text">
+                      <string>db</string>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_14">
+                  <item>
+                   <widget class="QLabel" name="label_WndFFTShowMaxFreq_2">
+                    <property name="text">
+                     <string>显示总点数</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="SBox_WndFFTShowPointCount">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
+                    <property name="maximum">
+                     <number>100000</number>
+                    </property>
+                    <property name="singleStep">
+                     <number>20000</number>
+                    </property>
+                    <property name="value">
+                     <number>20000</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_11">
+                  <item>
+                   <widget class="QLabel" name="label_WndFFTShowMaxFreq">
+                    <property name="text">
+                     <string>显示最大频率</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="SBox_WndFFTShowMaxFreq">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
+                    <property name="maximum">
+                     <number>100000</number>
+                    </property>
+                    <property name="value">
+                     <number>200</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_13">
+                  <item>
+                   <widget class="QLabel" name="label_WndFFTShowMinVal">
+                    <property name="text">
+                     <string>显示最小数值</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="SBox_WndFFTShowMinVal">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
+                    <property name="minimum">
+                     <number>-10000</number>
+                    </property>
+                    <property name="maximum">
+                     <number>100000</number>
+                    </property>
+                    <property name="value">
+                     <number>-100</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_GenWndFFTGraph">
+                  <property name="text">
+                   <string>频谱分析</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_updateWndFFTCht">
+                  <property name="text">
+                   <string>刷新图像</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox_2">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>240</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="title">
+                <string>频谱数值</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <item>
+                 <widget class="QLabel" name="label_WndFFTDeltaFreq">
+                  <property name="text">
+                   <string>图像频率间隔：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_WndFFTSubPartCount">
+                  <property name="text">
+                   <string>统计旁瓣个数：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_mainPartMaxFFTError">
+                  <property name="text">
+                   <string>主峰最大误差：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_mainPart10dbHalfWidth">
+                  <property name="text">
+                   <string>主峰10db半宽：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_firstPartHeight">
+                  <property name="text">
+                   <string>第一旁瓣高度：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_firstPartFreq">
+                  <property name="text">
+                   <string>第一旁瓣位置：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_SecondPartHeight">
+                  <property name="text">
+                   <string>第二旁瓣高度：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_SecondPartFreq">
+                  <property name="text">
+                   <string>第二旁瓣位置：</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_WndFFTPartEst">
+          <attribute name="title">
+           <string>峰值形态统计</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QGroupBox" name="groupBox_6">
+             <property name="title">
+              <string>峰值形态统计</string>
+             </property>
+             <layout class="QHBoxLayout" name="HLayout_WndFFTPart_Cht"/>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_7">
+             <property name="minimumSize">
+              <size>
+               <width>240</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>240</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>分析控制</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QLabel" name="label_WndPartCht_PartCount">
+                <property name="text">
+                 <string>统计峰值数量：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_15">
+                <item>
+                 <widget class="QLabel" name="label_WndPartCht_showPartCount">
+                  <property name="text">
+                   <string>显示总峰数量</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="SBox_WndPartCht_PartCount">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="maximum">
+                   <number>30</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>20000</number>
+                  </property>
+                  <property name="value">
+                   <number>6</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_updateWndFFTPartCht">
+                <property name="text">
+                 <string>刷新图像</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_WndFFTPartResult">
+          <attribute name="title">
+           <string>窗函数频谱抑制输出</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QGroupBox" name="groupBox_SpecConstrainRatio">
+             <property name="title">
+              <string>边缘峰值抑制比例</string>
+             </property>
+             <layout class="QHBoxLayout" name="HLayout_WndSepcConstrainOutput"/>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_10">
+             <property name="minimumSize">
+              <size>
+               <width>240</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>240</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>分析控制</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item>
+                 <widget class="QLabel" name="label_MaxConstrainDbPos">
+                  <property name="text">
+                   <string>最大抑制范围(db)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="SBox_MaxConstrainDbPos">
+                  <property name="minimumSize">
+                   <size>
+                    <width>72</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>72</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="maximum">
+                   <number>140</number>
+                  </property>
+                  <property name="value">
+                   <number>55</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_18">
+                <item>
+                 <widget class="QLabel" name="label_PeakFreqDriftRatio">
+                  <property name="text">
+                   <string>峰值频率偏移比例(%)</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="DSBox_PeakFreqDriftRatio">
+                  <property name="minimumSize">
+                   <size>
+                    <width>72</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>72</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="maximum">
+                   <double>50.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>25.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="checkBox_forcePt2DBVal">
+                <property name="text">
+                 <string>强制第二点数值</string>
+                </property>
+                <property name="checkable">
+                 <bool>false</bool>
+                </property>
+                <property name="checked">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_19">
+                <item>
+                 <widget class="QLabel" name="label_forcePt2DBVal">
+                  <property name="text">
+                   <string>第二点指定DB：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="DSBox_forcePt2DBVal">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>72</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>72</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="value">
+                   <double>20.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_16">
+                <item>
+                 <widget class="QLabel" name="label_EnhanceConstrainPos">
+                  <property name="text">
+                   <string>启用增强抑制位置</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="SBox__EnheaceConstrainPos">
+                  <property name="minimumSize">
+                   <size>
+                    <width>72</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>72</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="maximum">
+                   <number>20</number>
+                  </property>
+                  <property name="value">
+                   <number>1</number>
+                  </property>
+                  <property name="displayIntegerBase">
+                   <number>10</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_17">
+                <item>
+                 <widget class="QLabel" name="label_EnhanceConstrainRatio">
+                  <property name="text">
+                   <string>增强抑制比例（%）</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="DSbox_EnhanceConstrainRatio">
+                  <property name="minimumSize">
+                   <size>
+                    <width>72</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>72</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="maximum">
+                   <double>1000.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>250.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_constrainSidePtCount">
+                <property name="text">
+                 <string>抑制边缘点个数：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_NoiseUnConstrainFreqInterval">
+                <property name="text">
+                 <string>窗谱噪声无法抑制距离：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_NoiseToBeSignalFreqInterval">
+                <property name="text">
+                 <string>窗谱噪声压制主信号距离：</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_GenWndSpecConstrainResult">
+                <property name="text">
+                 <string>生成抑制结果</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>231</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_activeWndSpec">
+          <attribute name="title">
+           <string>激发调制窗频谱</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_30">
+           <item>
+            <widget class="QGroupBox" name="groupBox_15">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>窗形频谱</string>
+             </property>
+             <layout class="QVBoxLayout" name="VLayout_ActiveFFTWndSpectrum_Cht"/>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_12">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>250</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>分析控制</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <widget class="QGroupBox" name="groupBox_13">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="title">
+                 <string>值显示方式</string>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_26">
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_ActiveWndFFTValType_AbsoluteVal">
+                   <property name="text">
+                    <string>绝对值</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_ActiveWndFFTValType_db">
+                   <property name="text">
+                    <string>db</string>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_ActiveWndFFTValType_AbsDb">
+                   <property name="text">
+                    <string>绝对db</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_27">
+                <item>
+                 <widget class="QLabel" name="label_ActiveWndFFTShowPointCount">
+                  <property name="text">
+                   <string>计算总点数</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="SBox_ActiveWndFFTShowPointCount">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="maximum">
+                   <number>100000</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>2000</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_28">
+                <item>
+                 <widget class="QLabel" name="label_ActiveWndFFTShowMaxFreq">
+                  <property name="text">
+                   <string>显示最大频率</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="SBox_ActiveWndFFTShowMaxFreq">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="maximum">
+                   <number>100000</number>
+                  </property>
+                  <property name="value">
+                   <number>1000</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_29">
+                <item>
+                 <widget class="QLabel" name="label_ActiveWndFFTShowMinVal">
+                  <property name="text">
+                   <string>显示最小数值</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="SBox_ActiveWndFFTShowMinVal">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="minimum">
+                   <number>-10000</number>
+                  </property>
+                  <property name="maximum">
+                   <number>100000</number>
+                  </property>
+                  <property name="value">
+                   <number>-100</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_35">
+                <item>
+                 <widget class="QPushButton" name="btn_GenActiveWndFFTGraph">
+                  <property name="text">
+                   <string>频谱分析</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_updateActiveWndFFTCht">
+                  <property name="text">
+                   <string>刷新图像</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_31">
+                <item>
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>扫描间隔：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_2">
+                  <property name="text">
+                   <string>[开始][结束][间隔]</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_32">
+                <item>
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>开始比例：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBox"/>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBox_2"/>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBox_3"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_33">
+                <item>
+                 <widget class="QLabel" name="label_5">
+                  <property name="text">
+                   <string>上升时间：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBox_4"/>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBox_5"/>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBox_6"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_GenActiveWndFFTGraph_2">
+                <property name="text">
+                 <string>开始扫描</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_38">
+                <item>
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>扫描进度</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QProgressBar" name="progressBar">
+                  <property name="value">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_36">
+                <item>
+                 <widget class="QLabel" name="label_6">
+                  <property name="text">
+                   <string>开始位置比例：（0%）</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSlider" name="horizontalSlider">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_37">
+                <item>
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>开始位置比例：（0%）</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSlider" name="horizontalSlider_2">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <spacer name="verticalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_WndSpecConstrainOutput">
+      <attribute name="title">
+       <string>窗谱抑制输出</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="VLayout_EffOscWidget"/>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

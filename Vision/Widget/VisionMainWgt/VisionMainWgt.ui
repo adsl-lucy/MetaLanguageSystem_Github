@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VisionMainWgtClass</class>
+ <widget class="QWidget" name="VisionMainWgtClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1110</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>VisionMainWgt</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="tab_loadImg">
+      <attribute name="title">
+       <string>图片加载</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="VLayout_LoadImg"/>
+     </widget>
+     <widget class="QWidget" name="tab_loadVedio">
+      <attribute name="title">
+       <string>视频解码</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="VLayout_LoadVedioFile"/>
+     </widget>
+     <widget class="QWidget" name="tab_ColorMetric">
+      <attribute name="title">
+       <string>颜色度量空间</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="VLayout_ColorMetricWgt"/>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

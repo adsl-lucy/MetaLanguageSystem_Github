@@ -1,0 +1,36 @@
+D:\WorkStation\project\MetaLanguage_Beta\MetaLanguage_Beta\x64\Debug\ThirdParty\ffmpeg
+D:\WorkStation\project\MetaLanguage_Beta\MetaLanguage_Beta\x64\Debug\ThirdParty\ffprobe
+
+D:\WorkStation\project\MetaLanguage_Beta\MetaLanguage_Beta\x64\Debug\TestAudio\clip_0003.wav
+D:\WorkStation\project\MetaLanguage_Beta\MetaLanguage_Beta\x64\Debug\TestAudio\VioletSnow.mp3
+D:\WorkStation\project\MetaLanguage_Beta\MetaLanguage_Beta\x64\Debug\TestAudio\DonGiovanniOp2.flac
+
+D:\WorkStation\project\MetaLanguage_Beta\MetaLanguage_Beta\x64\Debug\TestVedio\NVDIA.mp4
+D:\WorkStation\project\MetaLanguage_Beta\MetaLanguage_Beta\x64\Debug\TestVedio\Babara.mp4
+D:\WorkStation\project\MetaLanguage_Beta\MetaLanguage_Beta\x64\Debug\TestVedio\MH_TestVedio.mp4
+
+D:\WorkStation\project\MetaLanguage_Beta\MetaLanguage_Beta\x64\Debug\TestVedio\ImageOutput\Babara\Babara-%5d.jpg
+
+
+转码：
+ffmpeg -i a.mp3 -c:a pcm_s16le b.wav
+ffmpeg -i a.wav -c:a libmp3lame -ar 44100 -ac 1 -ab 320k b.mp3
+ffmpeg -i a.flac -c:a libmp3lame -ar 44100 -ac 2 -ab 320k b.mp3
+ffmpeg -i a.aac -c:a pcm_s16le b.wav
+
+打印信息
+ffprobe a.mp3 -print_format json
+ffprobe -hide_banner -show_format -show_streams -print_format json a.mp3
+ffprobe -hide_banner -show_format -show_streams -print_format json a.mp4
+
+打印帧信息
+ffprobe -v error -select_streams v:0 -show_frames -of json a.mp4
+
+将视频转换为图片序列（完全解码）
+ffmpeg -i a.mp4 -f image2 output-%5d.jpg
+
+提取视频音乐
+ffmpeg -i video.mp4 -vn -y -acodec copy video.aac
+
+
+
